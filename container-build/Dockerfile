@@ -12,7 +12,7 @@ LABEL io.k8s.description="A complex Apache http parent image, uses Onbuild" \
 
 RUN sed -i "s/Listen 80/listen 8090/g" /etc/httpd/conf/httpd.conf
 
-RUN chgrp -R 0 /var/log/httpd /var/run/httpd &&
+RUN chgrp -R 0 /var/log/httpd /var/run/httpd && \
     chmod -R g=u /var/log/httpd /var/run/httpd
 
 USER 501
